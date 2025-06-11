@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.open-modal-btn, .close-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+}
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.user-card {
+  background: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}

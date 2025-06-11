@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Modal from './components/Modal';
+
+import { teamMembers } from './data';
+
+
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Accessible React App</h1>
+      <h2>Team Members</h2>
+      <ul>
+        {teamMembers?.map((member) => (
+          <li key={member.name}>
+            <strong>{member.name}</strong> – {member.role}
+          </li>
+        ))}
+      </ul>
+
+      <button onClick={() => setIsModalOpen(true)}>
+        Show Accessibility Info
+      </button>
+
+      {isModalOpen && (
+        <Modal onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }
